@@ -13,6 +13,7 @@ async function main() {
     throw new Error("BANGUMI_RAKUEN_PATH is not defined");
   }
   const filePaths = await scanTopicFiles(BANGUMI_RAKUEN_PATH);
+  console.log(`扫描到 ${filePaths.size} 个文件`);
 
   // 并发
   const limit = pLimit(32);
